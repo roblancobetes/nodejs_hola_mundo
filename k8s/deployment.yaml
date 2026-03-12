@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: hola-node
-          image: TU_ACR.azurecr.io/hola-node:v1
+          image: image: hola-node:v1
           ports:
             - containerPort: 3000
           resources:
