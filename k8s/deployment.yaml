@@ -14,9 +14,18 @@ spec:
     spec:
       containers:
         - name: hola-node
-          image: image: hola-node:v1
+          image: hola-node:v1
           ports:
             - containerPort: 3000
+          env:
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
           resources:
             requests:
               cpu: "100m"
